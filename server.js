@@ -9,4 +9,4 @@ client.on('message', message => {
   }
 })
 
-client.login("NDM3ODEzMzM4Mjk1MjM4NjU2.Db7kpg.lwHfaM-2mK_yyJVPGUvUBeqfI_s");
+client.login("NDM4NTYyMTI3NDk4OTY5MDg4.DcGacQ.b6HwUEWgog4pwOo1hFzKM8ejU9M");
