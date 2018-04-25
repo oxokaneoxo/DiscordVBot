@@ -1,0 +1,19 @@
+{
+  "players": [
+    {
+      "name": "Bike#1933",
+      "wins": 7,
+      "losses": 3
+    },
+    {
+      "name": "Guy#1755",
+      "wins": 2,
+      "losses": 5
+    },
+    {
+      "name": "test#1333",
+      "wins": 5,
+      "losses": 5
+    }
+  ]
+}
