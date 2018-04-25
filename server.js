@@ -1,15 +1,23 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-// Added some dummy players, removing them later
+const config = require("./config.json");
+
+// added some dummy players, removing them later
 var queue = ["memester69#3333", "chokemedaddy#4444"]; 
 
-/*
-// wait for client to finish loading then throw the 'message' event
-// every time a user sends a message, store that message in the message var
-*/
-client.on('message', message => {
+// on client load, run this event
+client.on('ready', function() {
+  console.log("Bot has started, with " + client.users.size + " users, in "
+              + client.channels.size + " channels of " + client.guilds.size 
+              + " guilds.");
   client.user.setActivity("Super Seducer: How to Talk to Girls");
+});
+
+// every time a user sends a message, run this event
+client.on('message', function(message) {
+  // make sure the bot ignores other bots + itself
+  if(message.author.bot) return;
 
   if(message.content === "ping") {
     message.reply("Hey, I'm a reply!")
@@ -21,7 +29,7 @@ client.on('message', message => {
   if(message.content.toLowerCase() === "!joinqueue") {
     joinQueue(message);
   }
-})
+});
 
 function joinQueue(message) {
   // only check if player is in queue if there are players in the queue
@@ -44,4 +52,4 @@ function joinQueue(message) {
 // Log in to the discord bot with the token
 // also we probably shouldn't upload this to github now that I think about it
 // Yeah I was thinking the same thing, can we make it call for a pile that has the token that we dont upload to github?
-client.login("NDM4NTYyMTI3NDk4OTY5MDg4.DcGacQ.b6HwUEWgog4pwOo1hFzKM8ejU9M");
+client.login(config.token);
