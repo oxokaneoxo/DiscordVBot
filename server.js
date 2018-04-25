@@ -42,4 +42,5 @@ function joinQueue(message) {
 }
 
 // Log in to the discord bot with the token
+// also we probably shouldn't upload this to github now that I think about it
 client.login("NDM4NTYyMTI3NDk4OTY5MDg4.DcGacQ.b6HwUEWgog4pwOo1hFzKM8ejU9M");
