@@ -74,7 +74,7 @@ function joinQueue(message) {
     for(var i = 0, n = queue.length; i < n; i++) {
       if(queue[i] === message.author.tag) {
         // message.channel.send lets us send without replying to a user. Changed to message.reply, I think it looks better. 
-        message.reply("You are already in the queue.");
+        message.reply("you are already in the queue.");
 
         // return 0 to break out of the function if player is in queue already
         return;
