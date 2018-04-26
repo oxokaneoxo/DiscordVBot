@@ -55,7 +55,7 @@ function help(message) {
     \n !joinqueue: Lets you join an existing, if you are already in queue it lets you know.
     \n !viewqueue: Lets you see how many players are in queue and who they are.
     \n !clearqueue: Lets you delete a queue
-    `);
+  `);
 }
 
 function startQueue(message, _players, _teams) {
