@@ -1,3 +1,12 @@
+const Queue = require("./queue.js")
+
+var queue1 = new Queue(6, 3);
+
+console.log(queue1.getTeamLength())
+
+
+
+/*
 var fs = require("fs");
 var data = require("./data.json");
 
@@ -18,3 +27,4 @@ for(var i = 0; i < data.players.length; i++) {
   console.log("wins: " + data.players[i].wins);
   console.log("losses: " + data.players[i].losses + "\n");
 }
+*/
