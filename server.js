@@ -53,12 +53,19 @@ function startQueue(message, _players, _teams) {
     message.channel.send("There is already an active queue.\nRun !viewqueue to see active queue\nor run !clearqueue to clear active queue");
     return;
   }
-  players = _players;
-  for(var i = 0; i < _teams; i++) {
-    teams.push([]);
+  _players = parseInt(_players,10);
+  // parseInt returns NaN if it isnt passed an number. It gets rid of letters if added after a Number. 
+  if(!isNaN(_players)) {
+    players = _players;
+    for(var i = 0; i < _teams; i++) {
+      teams.push([]);
+    }
+    queueFlag = true;
+    message.channel.send("Starting a queue with " + players + " players and " + teams.length + " teams.");
   }
-  queueFlag = true;
-  message.channel.send("Starting a queue with " + players + " players and " + teams.length + " teams.");
+  else {
+    startQueueNotInt(message);
+  }
 }
 
 function joinQueue(message) {
@@ -66,8 +73,8 @@ function joinQueue(message) {
   if(queue.length > 0) {
     for(var i = 0, n = queue.length; i < n; i++) {
       if(queue[i] === message.author.tag) {
-        // message.channel.send lets us send without replying to a user
-        message.channel.send(message.author.tag + " is already in the queue.");
+        // message.channel.send lets us send without replying to a user. Changed to message.reply, I think it looks better. 
+        message.reply("You are already in the queue.");
 
         // return 0 to break out of the function if player is in queue already
         return;
@@ -109,6 +116,14 @@ function divideTeams(message) {
     message.channel.send(teams[i].toString() + '\n');
   }
 }
+
+function startQueueNotInt(message) {
+  message.reply("Please use numbers for total teams and player count. \n Example: !startqueue 6 2. Player count would be 6 and team size would be 2");
+  return;
+}
+
+
+
 
 // Log in to the discord bot with the token
 // also we probably shouldn't upload this to github now that I think about it
