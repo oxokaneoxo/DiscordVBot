@@ -48,16 +48,14 @@ client.on('message', function(message) {
   if(command === "help") help(message);
 });
 
-//explain/lists commands for users
 function help(message) {
-  //explains what !startqueue is and how to use it. 
-  message.channel.send("!startqueue: Lets you create a queue with a number of determined players and teams. To create a queue for 4 people and that has 2 teams you would type !joinqueue 4 2.");
-  //explains what !joinqueue is and how to use it
-  message.channel.send("!joinqueue: Lets you join an existing, if you are already in queue it lets you know.");
-  //explains what !viewqueue is and how to use it.
-  message.channel.send("!viewqueue: Lets you see how many players are in queue and who they are.");
-  //explains what !clearqueue is and how to use it.
-  message.channel.send("!clearqueue: Lets you delete a queue");
+  message.channel.send(`
+    !startqueue: Lets you create a queue with a number of determined players and teams. 
+    To create a queue for 4 people and that has 2 teams you would type !joinqueue 4 2.
+    \n !joinqueue: Lets you join an existing, if you are already in queue it lets you know.
+    \n !viewqueue: Lets you see how many players are in queue and who they are.
+    \n !clearqueue: Lets you delete a queue
+    `);
 }
 
 function startQueue(message, _players, _teams) {
@@ -133,10 +131,6 @@ function startQueueNotInt(message) {
   message.reply("Please use numbers for total teams and player count. \n Example: !startqueue 6 2. Player count would be 6 and team size would be 2");
   return;
 }
-
-
-
-
 
 // Log in to the discord bot with the token
 // also we probably shouldn't upload this to github now that I think about it
