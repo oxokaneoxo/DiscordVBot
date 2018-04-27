@@ -1,12 +1,13 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const Queue   = require("./queue.js");
+const client  = new Discord.Client();
 
-const config = require("./config.json");
-
-// **TODO** add multiple queue functionality
+// the config file containing bot login token
+const config  = require("./config.json");
 
 // added some dummy players, removing them later
-var queue = ["memester69#3333", "chokemedaddy#4444", "memester69#3334", "chokemedaddy#4443"];
+//var queue = new Queue("testQueue");
+var queues = [];
 var queueFlag = false;
 var players = 0;
 var teams = [];
@@ -71,8 +72,7 @@ function startQueue(message, _players, _teams) {
     }
     queueFlag = true;
     message.channel.send("Starting a queue with " + players + " players and " + teams.length + " teams.");
-  }
-  else {
+  } else {
     startQueueNotInt(message);
   }
 }

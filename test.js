@@ -1,9 +1,27 @@
 const Queue = require("./queue.js")
 
-var queue1 = new Queue(6, 3);
+var queue1 = new Queue("testQueue", 6, 2);
 
-console.log(queue1.getTeamLength())
+for(var i = 0; i < 6; i++) {
+  queue1.addPlayer("Player#" + (i + 1));
+}
 
+queue1.defineWinner(queue1.teams[1]);
+
+var queue2 = new Queue("testQueue", 10, 2);
+
+for(var i = 0; i < 10; i++) {
+  queue2.addPlayer("Player#" + (i + 1));
+}
+
+queue2.defineWinner(queue2.teams[0]);
+
+var arr = [];
+arr.push(new Queue("hello", 2, 2));
+arr.push(new Queue("olleh", 5, 5));
+
+
+//console.log(queue1.pool.toString());
 
 
 /*
