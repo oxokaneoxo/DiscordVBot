@@ -71,7 +71,6 @@ class Queue {
     console.log("Making teams...");
     var tmpPool = this.pool.slice();
     for(var i = 0; i < this.teams.length; i++) {
-      //this.teams[i].push(this.split(tmpPool, Math.floor(this.pool.length/this.teams.length)));
       var stuff = this.pool.length/this.teams.length
       this.teams[i].push(tmpPool.splice(0, Math.floor(stuff)));
     }
