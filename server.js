@@ -51,10 +51,10 @@ client.on('message', function(message) {
 
 function help(message) {
   message.channel.send(
-    "**!startqueue**: Create a new queue. To create a queue for 4 people and that has 2 teams you would type !joinqueue 4 2." +
-    "\n**!joinqueue**: Join a currently running queue" +
-    "\n**!viewqueue**: View all players in a currently running queue" +
-    "\n**!clearqueue**: Clear a currently running queue"
+    "**!startqueue**: Create a new queue. To create a queue for 4 people and that has 2 teams you would type !joinqueue 4 2."
+    + "\n**!joinqueue**: Join a currently running queue"
+    + "\n**!viewqueue**: View all players in a currently running queue"
+    + "\n**!clearqueue**: Clear a currently running queue"
   );
 }
 
